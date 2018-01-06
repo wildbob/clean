@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\sdk">
+      <UniqueIdentifier>{743118ff-b37e-412a-b968-f20c2a628d87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\sdk\interfaces">
+      <UniqueIdentifier>{616fada3-6f07-4c70-b6f0-6e4a26a44d8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\utilities">
+      <UniqueIdentifier>{269813fb-7eba-4d37-9688-e7ac361d2c5a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\utilities">
+      <UniqueIdentifier>{c1874a16-8a7f-4e45-95b6-e1d2bcc3d3ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\sdk">
+      <UniqueIdentifier>{c112b062-bdc0-461c-8305-6f1d1eac8522}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\menu">
+      <UniqueIdentifier>{fe24511d-a4af-457a-bb00-182e960bc5e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\hooks">
+      <UniqueIdentifier>{777033bf-6350-43f6-9cd7-afc63848bf65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\hooks">
+      <UniqueIdentifier>{f9ac30c6-8e29-47cb-853b-28631fd83a92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\renderer">
+      <UniqueIdentifier>{b04e2cb8-3fa3-4b11-97db-a0d972d24954}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\renderer">
+      <UniqueIdentifier>{d7989db7-4208-49e9-a4c6-21663214fd36}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="sdk\interfaces\engine.hpp">
+      <Filter>Header Files\sdk\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\interfaces\client.hpp">
+      <Filter>Header Files\sdk\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="core.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\interface helpers.hpp">
+      <Filter>Header Files\sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\client class.hpp">
+      <Filter>Header Files\sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\client props.hpp">
+      <Filter>Header Files\sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\player info.hpp">
+      <Filter>Header Files\sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\angles.hpp">
+      <Filter>Header Files\sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\net channel.hpp">
+      <Filter>Header Files\sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="utilities\netvar_manager.hpp">
+      <Filter>Header Files\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\entity.hpp">
+      <Filter>Header Files\sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\enums.hpp">
+      <Filter>Header Files\sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\interfaces\engine trace.hpp">
+      <Filter>Header Files\sdk\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\trace.hpp">
+      <Filter>Header Files\sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\interfaces\convar.hpp">
+      <Filter>Header Files\sdk\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\interfaces\entity list.hpp">
+      <Filter>Header Files\sdk\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\handle entity.hpp">
+      <Filter>Header Files\sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="utilities\utilities.hpp">
+      <Filter>Header Files\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\sdk.hpp">
+      <Filter>Header Files\sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="hooks\menu hooks.hpp">
+      <Filter>Header Files\hooks</Filter>
+    </ClInclude>
+    <ClInclude Include="hooks\hooks.hpp">
+      <Filter>Header Files\hooks</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\vfunc_hook.hpp">
+      <Filter>Header Files\sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="renderer\render.hpp">
+      <Filter>Header Files\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\color.hpp">
+      <Filter>Header Files\sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="renderer\D3DFont.h">
+      <Filter>Header Files\renderer</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="core.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utilities\netvar_manager.cpp">
+      <Filter>Source Files\utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="sdk\entity.cpp">
+      <Filter>Source Files\sdk</Filter>
+    </ClCompile>
+    <ClCompile Include="hooks\menu hooks.cpp">
+      <Filter>Source Files\hooks</Filter>
+    </ClCompile>
+    <ClCompile Include="hooks\hooks.cpp">
+      <Filter>Source Files\hooks</Filter>
+    </ClCompile>
+    <ClCompile Include="sdk\vfunc_hook.cpp">
+      <Filter>Source Files\sdk</Filter>
+    </ClCompile>
+    <ClCompile Include="renderer\render.cpp">
+      <Filter>Source Files\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="renderer\D3DFont.cpp">
+      <Filter>Source Files\renderer</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
