@@ -42,8 +42,7 @@ namespace sdk
 				{
 					csgo.m_render()->setup_render_states();
 
-					csgo.m_render()->string(100.f, 20.f, CD3DFONT_CENTERED_X, Color(255, 255, 255), csgo.m_render()->m_fonts()->pFontTahoma10.get(), "yea your mad");
-				
+					csgo.m_render()->string(100.f, 20.f, CD3DFONT_CENTERED_X, Color(255, 255, 255), csgo.m_render()->m_fonts()->pFontTahoma10.get(), "yea your mad");				
 
 					csgo.m_features()->m_visuals()->initialize();
 				}

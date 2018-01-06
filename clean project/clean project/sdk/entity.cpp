@@ -39,4 +39,10 @@ namespace sdk
 		typedef int(__thiscall *OrigFn)(void*);
 		return sdk::helpers::get_virtual_function<OrigFn>(pNetworked, 10)(pNetworked);
 	}
+
+	i_collideable* entity_t::get_collideable()
+	{
+		typedef i_collideable*(__thiscall *OrigFn)(void*);
+		return sdk::helpers::get_virtual_function<OrigFn>(this, 3)(this);
+	}
 }

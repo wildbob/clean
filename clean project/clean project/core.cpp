@@ -20,6 +20,7 @@ c_csgo::c_csgo()
 	features = nullptr;
 	netvar = nullptr;
 	math = nullptr;
+	localplayer = nullptr;
 }
 
 c_csgo::~c_csgo()
@@ -62,6 +63,9 @@ c_csgo::~c_csgo()
 
 	if (math)
 		delete[] math;
+
+	if (localplayer)
+		delete[] localplayer;
 }
 
 
@@ -167,6 +171,14 @@ sdk::utilities::c_math* c_csgo::m_math()
 		math = new sdk::utilities::c_math();
 
 	return math;
+}
+
+sdk::entity_t* c_csgo::m_localplayer()
+{
+	if (!localplayer)
+		localplayer = m_entitylist()->get_entity(m_engine()->get_local_player());
+
+	return localplayer;
 }
 
 void cheat_init(PVOID pParam)

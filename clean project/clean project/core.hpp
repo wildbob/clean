@@ -19,7 +19,7 @@
 class c_csgo
 {
 private:
-	template< class T > T* c_csgo::get_interface(std::string szModuleName, std::string szInterfaceName, bool bSkip = false)
+	template< class T > T* get_interface(std::string szModuleName, std::string szInterfaceName, bool bSkip = false)
 	{
 		if (szModuleName.empty() || szInterfaceName.empty())
 			return nullptr;
@@ -74,6 +74,10 @@ protected:
 
 	//features
 	sdk::features::c_features*				features;
+
+	//misc
+	sdk::entity_t*							localplayer;
+
 public:
 	c_csgo();
 	~c_csgo();
@@ -99,6 +103,9 @@ public:
 
 	//features
 	sdk::features::c_features*				m_features( );
+
+	//misc
+	sdk::entity_t*							m_localplayer( );
 };
 
 extern c_csgo csgo;

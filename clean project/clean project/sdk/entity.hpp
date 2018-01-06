@@ -40,7 +40,6 @@ namespace sdk
 		netvar(angle_t, get_aim_punch_angle, "DT_BasePlayer", "m_aimPunchAngle");
 		netvar(vec3_t, get_velocity, "DT_BasePlayer", "m_vecVelocity[0]");
 		netvar(float, get_max_speed, "DT_BasePlayer", "m_flMaxspeed");
-		pnetvar(i_collideable, get_collideable, "DT_BaseEntity","m_Collision")
 
 
 		vec3_t					get_eye_position();
@@ -49,5 +48,6 @@ namespace sdk
 		c_clientclass*			get_client_class();
 		bool					is_dormant();
 		int						get_index();
+		i_collideable*			get_collideable();
 	};
 }

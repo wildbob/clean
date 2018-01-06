@@ -88,7 +88,7 @@ namespace sdk
 
 		void c_renderer::rect(vec2_t vecPos1, vec2_t vecPos2, Color color)
 		{
-			this->rect(vecPos1.x, vecPos1.y, vecPos2.x, vecPos2.y, color);
+			this->rect(vecPos1.x, vecPos1.y, vecPos1.x + vecPos2.x, vecPos1.y + vecPos2.y, color);
 		}
 
 
