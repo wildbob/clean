@@ -147,6 +147,12 @@
     <ClInclude Include="utilities\math.hpp">
       <Filter>Header Files\utilities</Filter>
     </ClInclude>
+    <ClInclude Include="hooks\hud update.hpp">
+      <Filter>Header Files\hooks</Filter>
+    </ClInclude>
+    <ClInclude Include="hooks\frame stage notify.hpp">
+      <Filter>Header Files\hooks</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="core.cpp">
@@ -184,6 +190,12 @@
     </ClCompile>
     <ClCompile Include="utilities\math.cpp">
       <Filter>Source Files\utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="hooks\hud update.cpp">
+      <Filter>Source Files\hooks</Filter>
+    </ClCompile>
+    <ClCompile Include="hooks\frame stage notify.cpp">
+      <Filter>Source Files\hooks</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -1130,6 +1130,16 @@ namespace sdk
 		return *this;
 	}
 
+	inline VMatrix&	VMatrix::operator=(const VMatrix &mOther) {
+		for (int i = 0; i < 4; i++) {
+			for (int j = 0; j < 4; j++) {
+				m[i][j] = mOther.m[i][j];
+			}
+		}
+
+		return *this;
+	}
+
 	inline VMatrix VMatrix::operator+(const VMatrix &other) const {
 		VMatrix ret;
 		for (int i = 0; i < 16; i++) {

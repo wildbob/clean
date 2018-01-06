@@ -2,6 +2,18 @@
 
 namespace sdk
 {
+
+	enum class clientframestage_t {
+		frame_undefined = -1,
+		frame_start,
+		frame_net_update_start,
+		frame_net_update_postdataupdate_start,
+		frame_net_update_postdataupdate_end,
+		frame_net_update_end,
+		frame_render_start,
+		frame_render_end
+	};
+
 	enum ecstrike15usermessages
 	{
 		cs_um_vguimenu = 1,

@@ -7,6 +7,18 @@ namespace sdk
 	namespace utilities
 	{
 
+		VMatrix& c_math::world_to_screen_matrix()
+		{
+			static uint64_t dwFunction = csgo.m_utils()->find_pattern_ida("engine.dll", "A1 ? ? ? ? 83 F8 01 7E 11 69 C8");
+			static DWORD_PTR dwVMatrixPtr = *(DWORD_PTR*)(dwFunction + 0x11);
+
+			DWORD_PTR dwVMatrix = *(DWORD_PTR*)dwVMatrixPtr;
+
+			DWORD_PTR dwResult = dwVMatrix + 2 * 528 - 68;
+
+			return (VMatrix&)(*(DWORD_PTR*)dwResult);
+		}
+
 		void c_math::sin_cos(float radians, float *sine, float *cosine)
 		{
 			*sine = sin(radians);
@@ -255,7 +267,7 @@ namespace sdk
 
 		bool c_math::screen_transform(const  vec3_t &point, vec3_t &screen)
 		{
-			static auto& w2sMatrix = csgo.m_engine( )->world_to_screen_matrix();
+			static auto& w2sMatrix = csgo.world_to_screen_matrix;
 
 			screen.x = w2sMatrix.m[0][0] * point.x + w2sMatrix.m[0][1] * point.y + w2sMatrix.m[0][2] * point.z + w2sMatrix.m[0][3];
 			screen.y = w2sMatrix.m[1][0] * point.x + w2sMatrix.m[1][1] * point.y + w2sMatrix.m[1][2] * point.z + w2sMatrix.m[1][3];

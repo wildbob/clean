@@ -37,6 +37,7 @@ namespace sdk
 			 angle_t compute_angle(const vec3_t &source, const vec3_t &destination);
 			 bool screen_transform(const  vec3_t &point, vec3_t &screen);
 			 bool world_to_screen(vec3_t &origin, vec3_t &screen);
+			 VMatrix& world_to_screen_matrix();
 		};
 	}
 }

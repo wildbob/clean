@@ -1,5 +1,6 @@
 #include "hooks.hpp"
 #include "menu hooks.hpp"
+#include "frame stage notify.hpp"
 #include "..\core.hpp"
 
 namespace sdk
@@ -13,6 +14,7 @@ namespace sdk
 			d3d_hook.hook_index(17, hk_present);
 
 			client_hook.setup(csgo.m_client());
+			client_hook.hook_index(36, hk_frame_stage_notify);
 		}
 	}
 }

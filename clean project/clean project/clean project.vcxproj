@@ -119,7 +119,9 @@
     <ClInclude Include="core.hpp" />
     <ClInclude Include="features\features.hpp" />
     <ClInclude Include="features\visuals.hpp" />
+    <ClInclude Include="hooks\frame stage notify.hpp" />
     <ClInclude Include="hooks\hooks.hpp" />
+    <ClInclude Include="hooks\hud update.hpp" />
     <ClInclude Include="hooks\menu hooks.hpp" />
     <ClInclude Include="hooks\writeusercmddeltatobuffer.hpp" />
     <ClInclude Include="renderer\D3DFont.h" />
@@ -153,7 +155,9 @@
     <ClCompile Include="core.cpp" />
     <ClCompile Include="features\features.cpp" />
     <ClCompile Include="features\visuals.cpp" />
+    <ClCompile Include="hooks\frame stage notify.cpp" />
     <ClCompile Include="hooks\hooks.cpp" />
+    <ClCompile Include="hooks\hud update.cpp" />
     <ClCompile Include="hooks\menu hooks.cpp" />
     <ClCompile Include="hooks\writeusercmddeltatobuffer.cpp" />
     <ClCompile Include="renderer\D3DFont.cpp" />

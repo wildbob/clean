@@ -40,32 +40,11 @@ c_csgo::~c_csgo()
 	if (entitylist)
 		delete[] entitylist;
 
-	if (utils)
-		delete[] utils;
-
 	if (d3d_device)
 		delete[] d3d_device;
 
-	if (hooks)
-		delete[] hooks;
-
-	if (render)
-		delete[] render;
-
 	if (clientstate)
 		delete[] clientstate;
-
-	if (features)
-		delete[] features;
-
-	if (netvar)
-		delete[] netvar;
-
-	if (math)
-		delete[] math;
-
-	if (localplayer)
-		delete[] localplayer;
 }
 
 
@@ -120,25 +99,25 @@ sdk::interfaces::c_clientstate* c_csgo::m_clientstate()
 sdk::utilities::c_utils* c_csgo::m_utils()
 {
 	if (!utils)
-		utils = new sdk::utilities::c_utils();
+		utils = std::make_unique<sdk::utilities::c_utils>();
 
-	return utils;
+	return utils.get();
 }
 
 sdk::hooks::c_hooks* c_csgo::m_hooks()
 {
 	if (!hooks)
-		hooks = new sdk::hooks::c_hooks();
+		hooks = std::make_unique<sdk::hooks::c_hooks>();
 
-	return hooks;
+	return hooks.get();
 }
 
 sdk::renderer::c_renderer* c_csgo::m_render()
 {
 	if (!render)
-		render = new sdk::renderer::c_renderer();
+		render = std::make_unique<sdk::renderer::c_renderer>();
 
-	return render;
+	return render.get();
 }
 
 IDirect3DDevice9* c_csgo::m_d3d_device()
@@ -152,25 +131,25 @@ IDirect3DDevice9* c_csgo::m_d3d_device()
 sdk::features::c_features* c_csgo::m_features()
 {
 	if (!features)
-		features = new sdk::features::c_features();
+		features = std::make_unique<sdk::features::c_features>();
 
-	return features;
+	return features.get();
 }
 
 sdk::utilities::c_netvar* c_csgo::m_netvar()
 {
 	if (!netvar)
-		netvar = new sdk::utilities::c_netvar();
+		netvar = std::make_unique<sdk::utilities::c_netvar>();
 
-	return netvar;
+	return netvar.get();
 }
 
 sdk::utilities::c_math* c_csgo::m_math()
 {
 	if (!math)
-		math = new sdk::utilities::c_math();
+		math = std::make_unique<sdk::utilities::c_math>();
 
-	return math;
+	return math.get();
 }
 
 sdk::entity_t* c_csgo::m_localplayer()

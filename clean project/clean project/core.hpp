@@ -53,30 +53,30 @@ private:
 	}
 protected:
 	//interfaces
-	sdk::interfaces::c_engine*				engine;
-	sdk::interfaces::c_client*				client;
-	sdk::interfaces::c_enginetrace*			enginetrace;
-	sdk::interfaces::c_cvar*				convar;
-	sdk::interfaces::c_cliententitylist*	entitylist;
-	sdk::interfaces::c_clientstate*			clientstate;
-	IDirect3DDevice9*						d3d_device;
+	sdk::interfaces::c_engine*								engine;
+	sdk::interfaces::c_client*								client;
+	sdk::interfaces::c_enginetrace*							enginetrace;
+	sdk::interfaces::c_cvar*								convar;
+	sdk::interfaces::c_cliententitylist*					entitylist;
+	sdk::interfaces::c_clientstate*							clientstate;
+	IDirect3DDevice9*										d3d_device;
 
 	//utilities
-	sdk::utilities::c_utils*				utils;
-	sdk::utilities::c_netvar*				netvar;
-	sdk::utilities::c_math*					math;
+	std::unique_ptr<sdk::utilities::c_utils>				utils;
+	std::unique_ptr<sdk::utilities::c_netvar>				netvar;
+	std::unique_ptr<sdk::utilities::c_math>					math;
 
 	//hooks
-	sdk::hooks::c_hooks*					hooks;
+	std::unique_ptr<sdk::hooks::c_hooks>					hooks;
 
 	//renderer
-	sdk::renderer::c_renderer*				render;
+	std::unique_ptr<sdk::renderer::c_renderer>				render;
 
 	//features
-	sdk::features::c_features*				features;
+	std::unique_ptr<sdk::features::c_features>				features;
 
 	//misc
-	sdk::entity_t*							localplayer;
+	sdk::entity_t*											localplayer;
 
 public:
 	c_csgo();
@@ -105,7 +105,8 @@ public:
 	sdk::features::c_features*				m_features( );
 
 	//misc
-	sdk::entity_t*							m_localplayer( );
+	sdk::entity_t*							m_localplayer( );	
+	sdk::VMatrix							world_to_screen_matrix;
 };
 
 extern c_csgo csgo;
