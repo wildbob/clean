@@ -1,5 +1,5 @@
 #pragma once
-class i_net_channel
+class i_net_channel_info
 {
 public:
 

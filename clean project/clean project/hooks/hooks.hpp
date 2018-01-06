@@ -14,6 +14,7 @@ namespace sdk
 
 			void setup_hooks();
 			c_vfunc_hook d3d_hook;
+			c_vfunc_hook client_hook;
 		};
 	}
 }

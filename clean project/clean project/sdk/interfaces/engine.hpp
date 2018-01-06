@@ -71,9 +71,9 @@ namespace sdk
 				return sdk::helpers::get_virtual_function<OrigFn>(this, 37)(this);
 			}
 
-			i_net_channel*get_net_channel_info()
+			i_net_channel_info*get_net_channel_info()
 			{
-				typedef i_net_channel*(__thiscall *OrigFn)(void*);
+				typedef i_net_channel_info*(__thiscall *OrigFn)(void*);
 				return sdk::helpers::get_virtual_function<OrigFn>(this, 78)(this);
 			}
 

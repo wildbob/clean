@@ -43,6 +43,12 @@
     <Filter Include="Source Files\renderer">
       <UniqueIdentifier>{d7989db7-4208-49e9-a4c6-21663214fd36}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\features">
+      <UniqueIdentifier>{29571b14-a4a9-4031-9cb5-2c0c05f04be0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\features">
+      <UniqueIdentifier>{98a298dc-577e-4bd5-9527-1134d9440634}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="sdk\interfaces\engine.hpp">
@@ -120,6 +126,21 @@
     <ClInclude Include="renderer\D3DFont.h">
       <Filter>Header Files\renderer</Filter>
     </ClInclude>
+    <ClInclude Include="hooks\writeusercmddeltatobuffer.hpp">
+      <Filter>Header Files\hooks</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\net msg.hpp">
+      <Filter>Header Files\sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\interfaces\clientstate.hpp">
+      <Filter>Header Files\sdk\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="features\visuals.hpp">
+      <Filter>Header Files\features</Filter>
+    </ClInclude>
+    <ClInclude Include="features\features.hpp">
+      <Filter>Header Files\features</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="core.cpp">
@@ -145,6 +166,15 @@
     </ClCompile>
     <ClCompile Include="renderer\D3DFont.cpp">
       <Filter>Source Files\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="hooks\writeusercmddeltatobuffer.cpp">
+      <Filter>Source Files\hooks</Filter>
+    </ClCompile>
+    <ClCompile Include="features\visuals.cpp">
+      <Filter>Source Files\features</Filter>
+    </ClCompile>
+    <ClCompile Include="features\features.cpp">
+      <Filter>Source Files\features</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -10,6 +10,10 @@
 #include "sdk\sdk.hpp"
 #include "hooks\hooks.hpp"
 #include "renderer\render.hpp"
+#include "sdk\net msg.hpp"
+#include "sdk\interfaces\clientstate.hpp"
+#include "features\features.hpp"
+#include "utilities\netvar_manager.hpp"
 
 class c_csgo
 {
@@ -53,16 +57,21 @@ protected:
 	sdk::interfaces::c_enginetrace*			enginetrace;
 	sdk::interfaces::c_cvar*				convar;
 	sdk::interfaces::c_cliententitylist*	entitylist;
+	sdk::interfaces::c_clientstate*			clientstate;
+	IDirect3DDevice9*						d3d_device;
 
 	//utilities
 	sdk::utilities::c_utils*				utils;
-	IDirect3DDevice9*						d3d_device;
+	sdk::utilities::c_netvar*				netvar;
 
 	//hooks
 	sdk::hooks::c_hooks*					hooks;
 
 	//renderer
 	sdk::renderer::c_renderer*				render;
+
+	//features
+	sdk::features::c_features*				features;
 public:
 	c_csgo();
 	~c_csgo();
@@ -72,12 +81,21 @@ public:
 	sdk::interfaces::c_enginetrace*			m_enginetrace( );
 	sdk::interfaces::c_cvar*				m_convar( );
 	sdk::interfaces::c_cliententitylist*	m_entitylist( );
+	sdk::interfaces::c_clientstate*			m_clientstate( );
+	IDirect3DDevice9*						m_d3d_device();
 
 	//utilities
 	sdk::utilities::c_utils*				m_utils( );
-	IDirect3DDevice9*						m_d3d_device( );
+	sdk::utilities::c_netvar*				m_netvar( );
+
+	//hooks
 	sdk::hooks::c_hooks*					m_hooks( );
+
+	//renderer
 	sdk::renderer::c_renderer*				m_render( );
+
+	//features
+	sdk::features::c_features*				m_features( );
 };
 
 extern c_csgo csgo;

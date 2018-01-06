@@ -1,4 +1,4 @@
-#include "utilities\netvar_manager.hpp"
+#include "core.hpp"
 #include "hooks\hooks.hpp"
 #include <Windows.h>
 #include <process.h>
@@ -16,6 +16,9 @@ c_csgo::c_csgo()
 	d3d_device = nullptr;
 	hooks = nullptr;
 	render = nullptr;
+	clientstate = nullptr;
+	features = nullptr;
+	netvar = nullptr;
 }
 
 c_csgo::~c_csgo()
@@ -46,6 +49,15 @@ c_csgo::~c_csgo()
 
 	if (render)
 		delete[] render;
+
+	if (clientstate)
+		delete[] clientstate;
+
+	if (features)
+		delete[] features;
+
+	if (netvar)
+		delete[] netvar;
 }
 
 
@@ -89,6 +101,14 @@ sdk::interfaces::c_cliententitylist* c_csgo::m_entitylist()
 	return entitylist;
 }
 
+sdk::interfaces::c_clientstate* c_csgo::m_clientstate()
+{
+	if (!clientstate && engine)
+		clientstate = **reinterpret_cast< sdk::interfaces::c_clientstate*** > ((*reinterpret_cast< uintptr_t** > (engine))[12] + 0x10);
+
+	return clientstate;
+}
+
 sdk::utilities::c_utils* c_csgo::m_utils()
 {
 	if (!utils)
@@ -121,18 +141,30 @@ IDirect3DDevice9* c_csgo::m_d3d_device()
 	return d3d_device;
 }
 
+sdk::features::c_features* c_csgo::m_features()
+{
+	if (!features)
+		features = new sdk::features::c_features();
 
+	return features;
+}
+
+sdk::utilities::c_netvar* c_csgo::m_netvar()
+{
+	if (!netvar)
+		netvar = new sdk::utilities::c_netvar();
+
+	return netvar;
+}
 
 
 void cheat_init(PVOID pParam)
 {
-	g_netvar = std::make_unique<c_netvar>();
+	csgo.m_netvar( )->initialize();
 
-	g_netvar->initialize();
+	csgo.m_netvar( )->dump();
 
-	g_netvar->dump();
-
-	csgo.m_hooks()->setup_hooks();
+	csgo.m_hooks( )->setup_hooks();
 }
 
 BOOL WINAPI DllMain(HMODULE hModule, DWORD dwReason, LPVOID lpReserved)

@@ -1,6 +1,18 @@
 #include <Windows.h>
-#include "..\utilities\netvar_manager.hpp"
+#include "..\core.hpp"
 #include "enums.hpp"
+
+#define netvar(type, name, table, netvar)                           \
+    type& name() const {                                          \
+        static int _##name = csgo.m_netvar( )->get_offset(table, netvar);     \
+        return *(type*)((uintptr_t)this + _##name);                 \
+    }
+
+#define pnetvar(type, name, table, netvar)                           \
+    type* name() const {                                          \
+        static int _##name = csgo.m_netvar( )->get_offset(table, netvar);     \
+        return (type*)((uintptr_t)this + _##name);                 \
+    }
 
 namespace sdk
 {
@@ -28,7 +40,8 @@ namespace sdk
 		netvar(vec3_t, get_velocity, "DT_BasePlayer", "m_vecVelocity[0]");
 		netvar(float, get_max_speed, "DT_BasePlayer", "m_flMaxspeed");
 
-		vec3_t	get_eye_position();
-		bool	is_alive();
+		vec3_t					get_eye_position();
+		bool					is_alive();
+		const matrix3x4_t&		get_coordinate_frame();
 	};
 }
