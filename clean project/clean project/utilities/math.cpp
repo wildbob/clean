@@ -113,7 +113,7 @@ namespace sdk
 			return sqrt(pow(v1.x - v2.x, 2) + pow(v1.y - v2.y, 2) + pow(v1.z - v2.z, 2));
 		}
 
-		void c_math::vector_angles_2d(vec3_t& vecAngles, vec3_t& vecForward)
+		void c_math::angle_vectors_2d(vec3_t& vecAngles, vec3_t& vecForward)
 		{
 			float sp, sy, cp, cy;
 			sin_cos(static_cast<float>(vecAngles[1] * (M_PI / 180.f)), &sy, &cy);
@@ -225,7 +225,7 @@ namespace sdk
 
 		float c_math::get_delta(float hspeed, float maxspeed, float airaccelerate)
 		{
-			auto term = (30.0 - (airaccelerate * maxspeed / 66.0)) / hspeed;
+			float term = (30.0f - (airaccelerate * maxspeed / 66.0f)) / hspeed;
 
 			if (term < 1.0f && term > -1.0f) {
 				return acos(term);
