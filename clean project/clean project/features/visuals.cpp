@@ -67,5 +67,29 @@ namespace sdk
 
 			return box;
 		}
+
+		void c_visuals::initialize()
+		{
+			for (std::size_t i = 0; i <= csgo.m_engine( )->get_max_clients( ); i++)
+			{
+				entity_t* m_entity = static_cast< entity_t* >(csgo.m_entitylist( )->get_entity( i ) );
+
+				if (!m_entity)
+					continue;
+
+				if (!m_entity->is_alive())
+					continue;
+
+				if (m_entity->is_dormant())
+					continue;
+
+				if (m_entity->get_client_class()->m_ClassID != 35)
+					continue;
+
+				auto box = this->get_bounding_box(m_entity);
+
+				csgo.m_render()->rect(vec2_t{ box.x, box.y }, vec2_t{ box.w, box.h }, Color(150, 0, 0, 255));
+			}
+		}
 	}
 }

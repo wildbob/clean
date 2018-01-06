@@ -30,7 +30,8 @@ namespace sdk
 				float x, y, w, h;
 			};
 		public:
-			box_t get_bounding_box(entity_t* m_entity);
+			box_t		get_bounding_box(entity_t* m_entity);
+			void		initialize();
 		};
 	}
 }

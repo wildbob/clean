@@ -46,5 +46,8 @@ namespace sdk
 		vec3_t					get_eye_position();
 		bool					is_alive();
 		const matrix3x4_t&		get_coordinate_frame();
+		c_clientclass*			get_client_class();
+		bool					is_dormant();
+		int						get_index();
 	};
 }
