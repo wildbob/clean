@@ -19,6 +19,7 @@ c_csgo::c_csgo()
 	clientstate = nullptr;
 	features = nullptr;
 	netvar = nullptr;
+	math = nullptr;
 }
 
 c_csgo::~c_csgo()
@@ -58,6 +59,9 @@ c_csgo::~c_csgo()
 
 	if (netvar)
 		delete[] netvar;
+
+	if (math)
+		delete[] math;
 }
 
 
@@ -157,6 +161,13 @@ sdk::utilities::c_netvar* c_csgo::m_netvar()
 	return netvar;
 }
 
+sdk::utilities::c_math* c_csgo::m_math()
+{
+	if (!math)
+		math = new sdk::utilities::c_math();
+
+	return math;
+}
 
 void cheat_init(PVOID pParam)
 {

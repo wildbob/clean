@@ -1,6 +1,7 @@
 #include <Windows.h>
 #include "..\core.hpp"
 #include "enums.hpp"
+#include "collideable.hpp"
 
 #define netvar(type, name, table, netvar)                           \
     type& name() const {                                          \
@@ -39,6 +40,8 @@ namespace sdk
 		netvar(angle_t, get_aim_punch_angle, "DT_BasePlayer", "m_aimPunchAngle");
 		netvar(vec3_t, get_velocity, "DT_BasePlayer", "m_vecVelocity[0]");
 		netvar(float, get_max_speed, "DT_BasePlayer", "m_flMaxspeed");
+		pnetvar(i_collideable, get_collideable, "DT_BaseEntity","m_Collision")
+
 
 		vec3_t					get_eye_position();
 		bool					is_alive();

@@ -127,6 +127,7 @@
     <ClInclude Include="sdk\angles.hpp" />
     <ClInclude Include="sdk\client class.hpp" />
     <ClInclude Include="sdk\client props.hpp" />
+    <ClInclude Include="sdk\collideable.hpp" />
     <ClInclude Include="sdk\color.hpp" />
     <ClInclude Include="sdk\entity.hpp" />
     <ClInclude Include="sdk\enums.hpp" />
@@ -144,6 +145,7 @@
     <ClInclude Include="sdk\sdk.hpp" />
     <ClInclude Include="sdk\trace.hpp" />
     <ClInclude Include="sdk\vfunc_hook.hpp" />
+    <ClInclude Include="utilities\math.hpp" />
     <ClInclude Include="utilities\netvar_manager.hpp" />
     <ClInclude Include="utilities\utilities.hpp" />
   </ItemGroup>
@@ -158,6 +160,7 @@
     <ClCompile Include="renderer\render.cpp" />
     <ClCompile Include="sdk\entity.cpp" />
     <ClCompile Include="sdk\vfunc_hook.cpp" />
+    <ClCompile Include="utilities\math.cpp" />
     <ClCompile Include="utilities\netvar_manager.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

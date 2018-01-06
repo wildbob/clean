@@ -141,6 +141,12 @@
     <ClInclude Include="features\features.hpp">
       <Filter>Header Files\features</Filter>
     </ClInclude>
+    <ClInclude Include="sdk\collideable.hpp">
+      <Filter>Header Files\sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="utilities\math.hpp">
+      <Filter>Header Files\utilities</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="core.cpp">
@@ -175,6 +181,9 @@
     </ClCompile>
     <ClCompile Include="features\features.cpp">
       <Filter>Source Files\features</Filter>
+    </ClCompile>
+    <ClCompile Include="utilities\math.cpp">
+      <Filter>Source Files\utilities</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

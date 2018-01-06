@@ -14,6 +14,7 @@
 #include "sdk\interfaces\clientstate.hpp"
 #include "features\features.hpp"
 #include "utilities\netvar_manager.hpp"
+#include "utilities\math.hpp"
 
 class c_csgo
 {
@@ -63,6 +64,7 @@ protected:
 	//utilities
 	sdk::utilities::c_utils*				utils;
 	sdk::utilities::c_netvar*				netvar;
+	sdk::utilities::c_math*					math;
 
 	//hooks
 	sdk::hooks::c_hooks*					hooks;
@@ -87,6 +89,7 @@ public:
 	//utilities
 	sdk::utilities::c_utils*				m_utils( );
 	sdk::utilities::c_netvar*				m_netvar( );
+	sdk::utilities::c_math*					m_math( );
 
 	//hooks
 	sdk::hooks::c_hooks*					m_hooks( );
