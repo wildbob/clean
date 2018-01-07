@@ -5,6 +5,38 @@ namespace sdk
 {
 	namespace features
 	{
+		void c_visuals::draw_box(float x, float y, float w, float h, sdk::Color color, Color outline, float width, float height)
+		{
+			//top left
+			csgo.m_render( )->line(x, y, x + width, y, color);
+			csgo.m_render( )->line(x, y, x, y + height, color);
+
+			csgo.m_render( )->line(x, y - 1, x + width, y - 1, outline);
+			csgo.m_render( )->line(x - 1, y, x - 1, y + height, outline);
+
+			//top right
+			csgo.m_render( )->line(x + w, y, x + w - width, y, color);
+			csgo.m_render( )->line(x + w, y, x + w, y + height, color);
+
+			csgo.m_render( )->line(x + w + 1, y - 1, x + w - width, y - 1, outline);
+			csgo.m_render( )->line(x + w + 1, y, x + w + 1, y + height, outline);
+
+			//bottom left
+			csgo.m_render( )->line(x, y + h, x, y + h - height, color);
+			csgo.m_render( )->line(x, y + h, x + width, y + h, color);
+
+			csgo.m_render( )->line(x - 1, y + h, x - 1, y + h - height, outline);
+			csgo.m_render( )->line(x - 1, y + h + 1, x + width, y + h + 1, outline);
+
+			//bottom right
+			csgo.m_render( )->line(x + w, y + h, x + w - width, y + h, color);
+			csgo.m_render( )->line(x + w, y + h, x + w, y + h - height, color);
+
+			csgo.m_render( )->line(x + w, y + h + 1, x + w - width, y + h + 1, outline);
+			csgo.m_render( )->line(x + w + 1, y + h, x + w + 1, y + h - height, outline);
+		}
+
+
 		c_visuals::box_t c_visuals::get_bounding_box(entity_t* m_entity)
 		{
 			box_t box{};
@@ -32,32 +64,27 @@ namespace sdk
 				csgo.m_math()->vector_transform(points[i], trans, pointsTransformed[i]);
 			}
 
+			vec3_t screen_points[8] = {};
 
-			if (!csgo.m_math()->world_to_screen(pointsTransformed[3], flb) || !csgo.m_math()->world_to_screen(pointsTransformed[5], brt)
-				|| !csgo.m_math()->world_to_screen(pointsTransformed[0], blb) || !csgo.m_math()->world_to_screen(pointsTransformed[4], frt)
-				|| !csgo.m_math()->world_to_screen(pointsTransformed[2], frb) || !csgo.m_math()->world_to_screen(pointsTransformed[1], brb)
-				|| !csgo.m_math()->world_to_screen(pointsTransformed[6], blt) || !csgo.m_math()->world_to_screen(pointsTransformed[7], flt))
-				return box;
+			for (int i = 0; i < 8; i++) {
+				if (!csgo.m_math()->world_to_screen(pointsTransformed[i], screen_points[i]))
+					return box;
+			}
 
-			vec3_t arr[] = { flb, brt, blb, frt, frb, brb, blt, flt };
+			auto left = screen_points[0].x;
+			auto top = screen_points[0].y;
+			auto right = screen_points[0].x;
+			auto bottom = screen_points[0].y;
 
-			// Init this shit
-			auto left = flb.x;
-			auto top = flb.y;
-			auto right = flb.x;
-			auto bottom = flb.y;
-
-			// Find the bounding corners for our box
-			for (int i = 1; i < 8; i++)
-			{
-				if (left > arr[i].x)
-					left = arr[i].x;
-				if (bottom < arr[i].y)
-					bottom = arr[i].y;
-				if (right < arr[i].x)
-					right = arr[i].x;
-				if (top > arr[i].y)
-					top = arr[i].y;
+			for (int i = 1; i < 8; i++) {
+				if (left > screen_points[i].x)
+					left = screen_points[i].x;
+				if (top < screen_points[i].y)
+					top = screen_points[i].y;
+				if (right < screen_points[i].x)
+					right = screen_points[i].x;
+				if (bottom > screen_points[i].y)
+					bottom = screen_points[i].y;
 			}
 
 			box.x = left;
@@ -88,7 +115,7 @@ namespace sdk
 
 				auto box = this->get_bounding_box(m_entity);
 
-				csgo.m_render( )->rect( vec2_t{ box.x, box.y }, vec2_t{ box.w, box.h }, Color(150, 0, 0, 255) );
+				this->draw_box(box.x, box.y, box.w, box.h, Color(150, 0, 0), Color(10, 10, 10), box.w, box.h);
 			}
 		}
 	}

@@ -21,6 +21,7 @@ c_csgo::c_csgo()
 	netvar = nullptr;
 	math = nullptr;
 	localplayer = nullptr;
+	menu = nullptr;
 }
 
 c_csgo::~c_csgo()
@@ -158,6 +159,14 @@ sdk::entity_t* c_csgo::m_localplayer()
 		localplayer = m_entitylist()->get_entity(m_engine()->get_local_player());
 
 	return localplayer;
+}
+
+sdk::menu::c_menu* c_csgo::m_menu()
+{
+	if (!menu)
+		menu = std::make_unique<sdk::menu::c_menu>();
+
+	return menu.get();
 }
 
 void cheat_init(PVOID pParam)

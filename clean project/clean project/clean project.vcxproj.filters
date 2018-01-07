@@ -49,6 +49,21 @@
     <Filter Include="Source Files\features">
       <UniqueIdentifier>{98a298dc-577e-4bd5-9527-1134d9440634}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\imgui">
+      <UniqueIdentifier>{8e51815c-b3de-48ac-8e3d-2189fbff5cc3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\imgui">
+      <UniqueIdentifier>{908858c3-a3e7-4769-bab1-db77a2364c40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\imgui\dx9">
+      <UniqueIdentifier>{7d40fdde-aea5-455b-a6aa-fc198b17eb73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\imgui\dx9">
+      <UniqueIdentifier>{9ec2653d-f41d-4ac1-ac92-13740760702c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\menu">
+      <UniqueIdentifier>{0ec9c80e-095e-4225-8da4-f3f6237076e0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="sdk\interfaces\engine.hpp">
@@ -153,6 +168,30 @@
     <ClInclude Include="hooks\frame stage notify.hpp">
       <Filter>Header Files\hooks</Filter>
     </ClInclude>
+    <ClInclude Include="imgui\imconfig.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui_internal.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\stb_rect_pack.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\stb_textedit.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\stb_truetype.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\directx9\imgui_impl_dx9.h">
+      <Filter>Header Files\imgui\dx9</Filter>
+    </ClInclude>
+    <ClInclude Include="menu\menu.hpp">
+      <Filter>Header Files\menu</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="core.cpp">
@@ -196,6 +235,18 @@
     </ClCompile>
     <ClCompile Include="hooks\frame stage notify.cpp">
       <Filter>Source Files\hooks</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\directx9\imgui_impl_dx9.cpp">
+      <Filter>Source Files\imgui\dx9</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui.cpp">
+      <Filter>Source Files\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_draw.cpp">
+      <Filter>Source Files\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="menu\menu.cpp">
+      <Filter>Source Files\menu</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

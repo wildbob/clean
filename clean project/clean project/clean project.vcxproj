@@ -124,6 +124,14 @@
     <ClInclude Include="hooks\hud update.hpp" />
     <ClInclude Include="hooks\menu hooks.hpp" />
     <ClInclude Include="hooks\writeusercmddeltatobuffer.hpp" />
+    <ClInclude Include="imgui\directx9\imgui_impl_dx9.h" />
+    <ClInclude Include="imgui\imconfig.h" />
+    <ClInclude Include="imgui\imgui.h" />
+    <ClInclude Include="imgui\imgui_internal.h" />
+    <ClInclude Include="imgui\stb_rect_pack.h" />
+    <ClInclude Include="imgui\stb_textedit.h" />
+    <ClInclude Include="imgui\stb_truetype.h" />
+    <ClInclude Include="menu\menu.hpp" />
     <ClInclude Include="renderer\D3DFont.h" />
     <ClInclude Include="renderer\render.hpp" />
     <ClInclude Include="sdk\angles.hpp" />
@@ -160,6 +168,10 @@
     <ClCompile Include="hooks\hud update.cpp" />
     <ClCompile Include="hooks\menu hooks.cpp" />
     <ClCompile Include="hooks\writeusercmddeltatobuffer.cpp" />
+    <ClCompile Include="imgui\directx9\imgui_impl_dx9.cpp" />
+    <ClCompile Include="imgui\imgui.cpp" />
+    <ClCompile Include="imgui\imgui_draw.cpp" />
+    <ClCompile Include="menu\menu.cpp" />
     <ClCompile Include="renderer\D3DFont.cpp" />
     <ClCompile Include="renderer\render.cpp" />
     <ClCompile Include="sdk\entity.cpp" />

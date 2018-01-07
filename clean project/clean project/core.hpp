@@ -15,6 +15,7 @@
 #include "features\features.hpp"
 #include "utilities\netvar_manager.hpp"
 #include "utilities\math.hpp"
+#include "menu\menu.hpp"
 
 class c_csgo
 {
@@ -78,6 +79,8 @@ protected:
 	//misc
 	sdk::entity_t*											localplayer;
 
+	//menu
+	std::unique_ptr<sdk::menu::c_menu>						menu;
 public:
 	c_csgo();
 	~c_csgo();
@@ -107,6 +110,9 @@ public:
 	//misc
 	sdk::entity_t*							m_localplayer( );	
 	sdk::VMatrix							world_to_screen_matrix;
+
+	//menu
+	sdk::menu::c_menu*						m_menu( );
 };
 
 extern c_csgo csgo;
