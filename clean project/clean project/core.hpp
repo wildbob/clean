@@ -16,6 +16,7 @@
 #include "utilities\netvar_manager.hpp"
 #include "utilities\math.hpp"
 #include "menu\menu.hpp"
+#include "sdk\interfaces\input system.hpp"
 
 class c_csgo
 {
@@ -60,6 +61,7 @@ protected:
 	sdk::interfaces::c_cvar*								convar;
 	sdk::interfaces::c_cliententitylist*					entitylist;
 	sdk::interfaces::c_clientstate*							clientstate;
+	sdk::interfaces::c_inputsystem*							input_system;
 	IDirect3DDevice9*										d3d_device;
 
 	//utilities
@@ -81,6 +83,7 @@ protected:
 
 	//menu
 	std::unique_ptr<sdk::menu::c_menu>						menu;
+	std::unique_ptr<sdk::menu::c_settings>					settings;
 public:
 	c_csgo();
 	~c_csgo();
@@ -91,6 +94,7 @@ public:
 	sdk::interfaces::c_cvar*				m_convar( );
 	sdk::interfaces::c_cliententitylist*	m_entitylist( );
 	sdk::interfaces::c_clientstate*			m_clientstate( );
+	sdk::interfaces::c_inputsystem*			m_input_system( );
 	IDirect3DDevice9*						m_d3d_device();
 
 	//utilities
@@ -113,6 +117,7 @@ public:
 
 	//menu
 	sdk::menu::c_menu*						m_menu( );
+	sdk::menu::c_settings*					m_settings( );
 };
 
 extern c_csgo csgo;

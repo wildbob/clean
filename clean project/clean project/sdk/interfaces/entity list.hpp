@@ -9,7 +9,7 @@ typedef unsigned long c_basehandle;
 
 namespace sdk
 {
-	struct entity_t;
+	class entity_t;
 	namespace interfaces
 	{
 		class c_cliententitylist

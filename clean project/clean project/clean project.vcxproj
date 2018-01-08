@@ -90,7 +90,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -124,7 +124,7 @@
     <ClInclude Include="hooks\hud update.hpp" />
     <ClInclude Include="hooks\menu hooks.hpp" />
     <ClInclude Include="hooks\writeusercmddeltatobuffer.hpp" />
-    <ClInclude Include="imgui\directx9\imgui_impl_dx9.h" />
+    <ClInclude Include="imgui\dx9\imgui_dx9.h" />
     <ClInclude Include="imgui\imconfig.h" />
     <ClInclude Include="imgui\imgui.h" />
     <ClInclude Include="imgui\imgui_internal.h" />
@@ -149,6 +149,7 @@
     <ClInclude Include="sdk\interfaces\engine trace.hpp" />
     <ClInclude Include="sdk\interfaces\engine.hpp" />
     <ClInclude Include="sdk\interfaces\entity list.hpp" />
+    <ClInclude Include="sdk\interfaces\input system.hpp" />
     <ClInclude Include="sdk\net channel.hpp" />
     <ClInclude Include="sdk\net msg.hpp" />
     <ClInclude Include="sdk\player info.hpp" />
@@ -168,7 +169,7 @@
     <ClCompile Include="hooks\hud update.cpp" />
     <ClCompile Include="hooks\menu hooks.cpp" />
     <ClCompile Include="hooks\writeusercmddeltatobuffer.cpp" />
-    <ClCompile Include="imgui\directx9\imgui_impl_dx9.cpp" />
+    <ClCompile Include="imgui\dx9\imgui_dx9.cpp" />
     <ClCompile Include="imgui\imgui.cpp" />
     <ClCompile Include="imgui\imgui_draw.cpp" />
     <ClCompile Include="menu\menu.cpp" />

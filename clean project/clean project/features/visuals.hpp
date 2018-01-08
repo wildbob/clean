@@ -5,7 +5,7 @@
 
 namespace sdk
 {
-	struct entity_t;
+	class entity_t;
 	class Color;
 	namespace features
 	{

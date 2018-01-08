@@ -106,7 +106,7 @@ namespace sdk
 	class c_physcollide;
 	struct cplane_t;
 	struct virtualmeshlist_t;
-	struct entity_t;
+	class entity_t;
 
 	enum class TraceType {
 		TRACE_EVERYTHING = 0,

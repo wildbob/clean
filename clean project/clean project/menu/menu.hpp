@@ -10,7 +10,16 @@ namespace sdk
 		{
 		private:
 		public:
+			void initialize_gui(IDirect3DDevice9* pDevice);
 			void draw();
+			static bool initialized;
+			static bool m_pressedkeys[256];
+		};
+
+		class c_settings
+		{
+		public:
+			bool m_menuopen = false;
 		};
 	}
 }

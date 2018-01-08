@@ -17,8 +17,9 @@
 
 namespace sdk
 {
-	struct entity_t
+	class entity_t
 	{
+	public:
 		netvar(int, get_team, "DT_BaseEntity", "m_iTeamNum")
 		netvar(vec3_t, get_origin, "DT_BaseEntity", "m_vecOrigin")
 		netvar(float, get_simulation_time, "DT_BaseEntity", "m_flSimulationTime")

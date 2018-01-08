@@ -2,6 +2,7 @@
 #include "hooks\hooks.hpp"
 #include <Windows.h>
 #include <process.h>
+#include "hooks\menu hooks.hpp"
 
 c_csgo csgo;
 
@@ -22,6 +23,8 @@ c_csgo::c_csgo()
 	math = nullptr;
 	localplayer = nullptr;
 	menu = nullptr;
+	settings = nullptr;
+	input_system = nullptr;
 }
 
 c_csgo::~c_csgo()
@@ -46,6 +49,9 @@ c_csgo::~c_csgo()
 
 	if (clientstate)
 		delete[] clientstate;
+
+	if (input_system)
+		delete[] input_system;
 }
 
 
@@ -169,11 +175,33 @@ sdk::menu::c_menu* c_csgo::m_menu()
 	return menu.get();
 }
 
+sdk::menu::c_settings* c_csgo::m_settings()
+{
+	if (!settings)
+		settings = std::make_unique<sdk::menu::c_settings>();
+
+	return settings.get();
+}
+
+sdk::interfaces::c_inputsystem* c_csgo::m_input_system()
+{
+	if (!input_system)
+		input_system = get_interface< sdk::interfaces::c_inputsystem > ( "inputsystem.dll", "InputSystemVersion" );
+
+	return input_system;
+}
+
 void cheat_init(PVOID pParam)
 {
 	csgo.m_netvar( )->initialize();
 
 	csgo.m_netvar( )->dump();
+
+	while (!(sdk::hooks::m_window = FindWindowA("Valve001", NULL)))
+		Sleep(200);
+
+	if (sdk::hooks::m_window)
+		sdk::hooks::wndproc_o = (WNDPROC)SetWindowLongPtr(sdk::hooks::m_window, GWL_WNDPROC, (LONG_PTR)sdk::hooks::hk_wndproc);
 
 	csgo.m_hooks( )->setup_hooks();
 }

@@ -40,9 +40,6 @@
     <Filter Include="Header Files\renderer">
       <UniqueIdentifier>{b04e2cb8-3fa3-4b11-97db-a0d972d24954}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\renderer">
-      <UniqueIdentifier>{d7989db7-4208-49e9-a4c6-21663214fd36}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\features">
       <UniqueIdentifier>{29571b14-a4a9-4031-9cb5-2c0c05f04be0}</UniqueIdentifier>
     </Filter>
@@ -63,6 +60,9 @@
     </Filter>
     <Filter Include="Source Files\menu">
       <UniqueIdentifier>{0ec9c80e-095e-4225-8da4-f3f6237076e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\menu\renderer">
+      <UniqueIdentifier>{d7989db7-4208-49e9-a4c6-21663214fd36}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -168,6 +168,15 @@
     <ClInclude Include="hooks\frame stage notify.hpp">
       <Filter>Header Files\hooks</Filter>
     </ClInclude>
+    <ClInclude Include="menu\menu.hpp">
+      <Filter>Header Files\menu</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\interfaces\input system.hpp">
+      <Filter>Header Files\sdk\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\dx9\imgui_dx9.h">
+      <Filter>Header Files\imgui\dx9</Filter>
+    </ClInclude>
     <ClInclude Include="imgui\imconfig.h">
       <Filter>Header Files\imgui</Filter>
     </ClInclude>
@@ -185,12 +194,6 @@
     </ClInclude>
     <ClInclude Include="imgui\stb_truetype.h">
       <Filter>Header Files\imgui</Filter>
-    </ClInclude>
-    <ClInclude Include="imgui\directx9\imgui_impl_dx9.h">
-      <Filter>Header Files\imgui\dx9</Filter>
-    </ClInclude>
-    <ClInclude Include="menu\menu.hpp">
-      <Filter>Header Files\menu</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -213,10 +216,10 @@
       <Filter>Source Files\sdk</Filter>
     </ClCompile>
     <ClCompile Include="renderer\render.cpp">
-      <Filter>Source Files\renderer</Filter>
+      <Filter>Source Files\menu\renderer</Filter>
     </ClCompile>
     <ClCompile Include="renderer\D3DFont.cpp">
-      <Filter>Source Files\renderer</Filter>
+      <Filter>Source Files\menu\renderer</Filter>
     </ClCompile>
     <ClCompile Include="hooks\writeusercmddeltatobuffer.cpp">
       <Filter>Source Files\hooks</Filter>
@@ -236,8 +239,8 @@
     <ClCompile Include="hooks\frame stage notify.cpp">
       <Filter>Source Files\hooks</Filter>
     </ClCompile>
-    <ClCompile Include="imgui\directx9\imgui_impl_dx9.cpp">
-      <Filter>Source Files\imgui\dx9</Filter>
+    <ClCompile Include="menu\menu.cpp">
+      <Filter>Source Files\menu</Filter>
     </ClCompile>
     <ClCompile Include="imgui\imgui.cpp">
       <Filter>Source Files\imgui</Filter>
@@ -245,8 +248,8 @@
     <ClCompile Include="imgui\imgui_draw.cpp">
       <Filter>Source Files\imgui</Filter>
     </ClCompile>
-    <ClCompile Include="menu\menu.cpp">
-      <Filter>Source Files\menu</Filter>
+    <ClCompile Include="imgui\dx9\imgui_dx9.cpp">
+      <Filter>Source Files\imgui\dx9</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
